@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Bayu Escobar - Rumah Online</title>
+  <title>Bayu Escobar - Website Online</title>
   <style>
     body {
       background-color: #000;
@@ -18,7 +18,7 @@
       border-right: 2px solid #00ff00;
       white-space: nowrap;
       overflow: hidden;
-      animation: typing 10s steps(100, end), blink 0.75s step-end infinite;
+      animation: typing 12s steps(100, end), blink 0.75s step-end infinite;
       max-width: 90%;
     }
 
@@ -32,14 +32,8 @@
       50% { border-color: #00ff00 }
     }
 
-    .hacker-img {
-      width: 200px;
-      margin: 40px auto;
-      filter: drop-shadow(0 0 20px #00ff00);
-    }
-
     .sosmed {
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
     .sosmed a {
@@ -71,15 +65,48 @@
       color: #00ffcc;
       font-weight: bold;
     }
+
+    .sponsor {
+      margin-top: 50px;
+    }
+
+    .sponsor p {
+      font-size: 18px;
+      color: #00ffaa;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #00ff88;
+      font-weight: bold;
+    }
+
+    .sponsor-logos {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .sponsor-logos a {
+      display: inline-block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .sponsor-logos img {
+      height: 60px;
+      filter: drop-shadow(0 0 10px #00ff88);
+      border-radius: 8px;
+    }
+
+    .sponsor-logos a:hover img {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 20px #00ffcc);
+    }
   </style>
 </head>
 <body>
 
   <div class="typewriter">
-    Selamat datang di rumah online Bayu Escobar — Anda sopan kami Yoman. Jika ada keperluan bisa hubungi sosial media saya di bawah ini.
+    selamat datang di website online Bayu Escobar anda sopan kami Yoman, jika perlu dengan saya silahkan hubungi sosial media saya di bawa ini
   </div>
-
-  <img src=<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Guy_Fawkes_mask.svg/1200px-Guy_Fawkes_mask.svg.png" alt="Hacker Mask" class="hacker-img">
 
   <div class="sosmed">
     <a href="https://www.facebook.com/byurzkyadminsantuy" target="_blank">
@@ -97,6 +124,21 @@
   </div>
 
   <div class="footer">Terimakasih Sudah Berkunjung</div>
+
+  <div class="sponsor">
+    <p>⚡ Disponsori oleh:</p>
+    <div class="sponsor-logos">
+      <a href="https://pertamina.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/id/thumb/5/5e/Logo_Pertamina.svg/512px-Logo_Pertamina.svg.png" alt="Pertamina">
+      </a>
+      <a href="https://www.coca-cola.com/id/id" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Coca-Cola_logo.svg/512px-Coca-Cola_logo.svg.png" alt="Coca-Cola">
+      </a>
+      <a href="https://hydroplus.id" target="_blank">
+        <img src="https://hydroplus.id/assets/images/logo.png" alt="Hydroplus">
+      </a>
+    </div>
+  </div>
 
 </body>
 </html>
