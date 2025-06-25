@@ -2,82 +2,65 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Form Data Diri</title>
+  <title>Game Tebak Angka - Bayu Escobar</title>
   <style>
     body {
-      background: #111;
+      background-color: #111;
       color: #0f0;
       font-family: monospace;
-      padding: 20px;
+      text-align: center;
+      padding: 50px;
     }
-    label, input, select {
-      display: block;
-      margin: 10px 0;
+
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 10px;
     }
-    input, select {
-      padding: 8px;
-      width: 300px;
+
+    #hasil {
+      margin-top: 20px;
+      font-size: 20px;
     }
-    button {
-      padding: 10px 20px;
-      background-color: #0f0;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
+
+    footer {
+      margin-top: 50px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <h2>Masukkan Data Diri Anda</h2>
-  <form id="form">
-    <label>Nama:</label>
-    <input type="text" id="nama" required>
+  <h1>🎮 Game Tebak Angka</h1>
+  <p>Tebak angka dari 1 sampai 10</p>
 
-    <label>Nama Panjang:</label>
-    <input type="text" id="namapjg" required>
+  <input type="number" id="tebakan" min="1" max="10" placeholder="Masukkan angka...">
+  <br>
+  <button onclick="cekTebakan()">Tebak!</button>
 
-    <label>Umur:</label>
-    <input type="number" id="umur" required>
+  <div id="hasil"></div>
 
-    <label>Pendidikan:</label>
-    <select id="pendidikan" required>
-      <option value="">-- Pilih --</option>
-      <option value="SD">SD</option>
-      <option value="SMP">SMP</option>
-      <option value="SMA">SMA</option>
-      <option value="Kuliah">Kuliah</option>
-    </select>
-
-    <input type="hidden" id="lokasi">
-
-    <button type="submit">Kirim Lewat WhatsApp</button>
-  </form>
+  <footer>
+    Dibuat oleh <strong>Bayu Escobar</strong> &copy; 2025
+  </footer>
 
   <script>
-    // Deteksi lokasi
-    fetch("https://ipapi.co/json/")
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("lokasi").value = `${data.city}, ${data.region}, ${data.country_name}`;
-      });
+    const angkaBenar = Math.floor(Math.random() * 10) + 1;
 
-    // Kirim data ke WhatsApp
-    document.getElementById("form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const nama = document.getElementById("nama").value;
-      const namapjg = document.getElementById("namapjg").value;
-      const umur = document.getElementById("umur").value;
-      const pendidikan = document.getElementById("pendidikan").value;
-      const lokasi = document.getElementById("lokasi").value;
+    function cekTebakan() {
+      const tebakan = parseInt(document.getElementById("tebakan").value);
+      const hasil = document.getElementById("hasil");
 
-      const message = `Halo, berikut data yang masuk:\n\nNama: ${nama}\nNama Panjang: ${namapjg}\nUmur: ${umur}\nPendidikan: ${pendidikan}\nLokasi: ${lokasi}`;
+      if (isNaN(tebakan) || tebakan < 1 || tebakan > 10) {
+        hasil.textContent = "Masukkan angka dari 1 sampai 10!";
+        return;
+      }
 
-      const phone = "6285604682974"; // GANTI ke nomor WA kamu (awali dengan 62)
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-      window.open(url, '_blank');
-    });
+      if (tebakan === angkaBenar) {
+        hasil.textContent = "🎉 Selamat! Kamu benar!";
+      } else {
+        hasil.textContent = `❌ Salah. Coba lagi!`;
+      }
+    }
   </script>
 </body>
 </html>
