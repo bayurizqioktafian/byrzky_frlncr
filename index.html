@@ -2,95 +2,89 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Bayu Rizqi Oktafian</title>
+  <title>Bayu Escobar - Rumah Online</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: monospace;
-      background-color: black;
+      background-color: #000;
       color: #00ff00;
-      background-image: radial-gradient(circle, #001100 10%, #000000 90%);
-      height: 100vh;
-      overflow: hidden;
+      font-family: 'Courier New', monospace;
+      background-image: radial-gradient(circle, #002200, #000000);
+      overflow-x: hidden;
     }
 
-    .marquee {
+    /* Efek ketikan berjalan */
+    .typewriter-container {
       white-space: nowrap;
       overflow: hidden;
       box-sizing: border-box;
-      position: absolute;
-      top: 20px;
-      width: 100%;
+      padding: 20px;
+      border-bottom: 1px solid #00ff00;
     }
 
-    .marquee p {
+    .typewriter-text {
       display: inline-block;
-      padding-left: 100%;
-      animation: scroll-left 20s linear infinite;
+      animation: typing 30s linear infinite;
       font-size: 18px;
+      color: #00ff00;
     }
 
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+    @keyframes typing {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
 
-    .konten {
-      position: absolute;
-      top: 100px;
-      left: 20px;
-      right: 20px;
-      font-size: 16px;
-      line-height: 1.6;
+    .content {
       text-align: center;
-    }
-
-    .kontak p {
-      margin: 5px 0;
-    }
-
-    .arabic {
-      margin-top: 20px;
-      font-size: 24px;
-      color: #00ffcc;
-      font-weight: bold;
+      padding: 30px 20px;
     }
 
     .hacker-img {
-      margin-top: 30px;
-      max-width: 300px;
-      width: 100%;
-      filter: drop-shadow(0 0 10px #00ff00);
+      width: 200px;
+      margin: 20px auto;
+      display: block;
+      filter: drop-shadow(0 0 20px #00ff00);
     }
 
-    a {
+    .sosmed {
+      margin-top: 20px;
+    }
+
+    .sosmed a {
+      color: #00ffff;
       text-decoration: none;
+      font-size: 16px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #00ffcc;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <div class="marquee">
-    <p>Selamat datang di Bayu Rizqi Oktafian. Anda sopan kami Yoman. Kalau ada keperluan bisa hubungi saya lewat sosial media di bawah ini.</p>
+  <div class="typewriter-container">
+    <div class="typewriter-text">
+      Selamat datang di rumah online Bayu Escobar — Anda sopan kami Yoman. Jika ada keperluan bisa hubungi sosial media saya di bawah ini.
+    </div>
   </div>
 
-  <div class="konten">
-    <img src="https://i.ibb.co/zf0jPf8/anonymous.png" alt="Hacker Anonymous" class="hacker-img">
+  <div class="content">
+    <img src="https://i.ibb.co/zf0jPf8/anonymous.png" alt="Hacker Mask" class="hacker-img">
 
-    <div class="kontak">
-      <p>📘 Facebook: <a href="https://www.facebook.com/byurzkyadminsantuy" target="_blank" style="color:#00ffff">byurzkyadminsantuy</a></p>
-      <p>📱 WhatsApp: <a href="https://wa.me/6285604682974" target="_blank" style="color:#00ffff">085604682974</a></p>
-      <p>📷 Instagram: <span style="color:#00ffff">@BayuRizqioktafian_</span></p>
+    <div class="sosmed">
+      <p>📘 Facebook: <a href="https://www.facebook.com/byurzkyadminsantuy" target="_blank">byurzkyadminsantuy</a></p>
+      <p>📷 Instagram: <a href="#" onclick="alert('Cari akun IG: bayurizqioktafian_'); return false;">@bayurizqioktafian_</a></p>
+      <p>📱 WhatsApp: <a href="https://wa.me/6285604682974" target="_blank">085604682974</a></p>
     </div>
 
-    <div class="arabic">
-      شُكْرًا جَزِيْلًا
-    </div>
+    <div class="footer">Terimakasih Sudah Berkunjung</div>
   </div>
 
 </body>
