@@ -1,59 +1,41 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bayu Escobar</title>
+  <meta charset="UTF-8">
+  <title>Deteksi Perangkat</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: black;
-      color: #00ff99;
-      font-family: 'Courier New', monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .container {
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
+      background: #111;
+      color: #0f0;
+      font-family: monospace;
+      padding: 20px;
     }
     h1 {
-      font-size: 3em;
-      margin-bottom: 0.3em;
-    }
-    .subtitle {
-      font-size: 1.3em;
-      color: #00ffcc;
-    }
-    .glitch {
-      animation: glitch 1s infinite;
-    }
-    @keyframes glitch {
-      0% { text-shadow: 2px 2px #ff0055, -2px -2px #00ffff; }
-      50% { text-shadow: -2px -2px #ff0055, 2px 2px #00ffff; }
-      100% { text-shadow: 2px 2px #ff0055, -2px -2px #00ffff; }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    footer {
-      position: absolute;
-      bottom: 10px;
-      font-size: 0.9em;
-      color: #777;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="glitch">Bayu Escobar</h1>
-    <p class="subtitle">🕶️ Hacker vibes. Freelancer. Writer. Night owl.</p>
-  </div>
-  <footer>© 2025 Bayu Escobar</footer>
+  <h1>Info Pengunjung</h1>
+  <p><strong>IP Address:</strong> <span id="ip">Mendeteksi...</span></p>
+  <p><strong>User Agent:</strong> <span id="ua"></span></p>
+  <p><strong>Lokasi:</strong> <span id="lokasi">Mendeteksi...</span></p>
+
+  <script>
+    // Tampilkan user agent (jenis HP, OS, dll)
+    document.getElementById("ua").innerText = navigator.userAgent;
+
+    // Deteksi IP dan lokasi
+    fetch("https://ipapi.co/json/")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("ip").innerText = data.ip;
+        document.getElementById("lokasi").innerText = `${data.city}, ${data.region}, ${data.country_name}`;
+      })
+      .catch(() => {
+        document.getElementById("ip").innerText = "Gagal deteksi";
+        document.getElementById("lokasi").innerText = "Gagal deteksi";
+      });
+  </script>
 </body>
 </html>
