@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Motivasi Bayu Escobar</title>
+  <title>Kutipan Islami - Bayu Escobar</title>
   <style>
     body {
       background-color: #000;
@@ -10,6 +10,7 @@
       font-family: 'Courier New', monospace;
       padding: 50px;
       font-size: 20px;
+      text-align: center;
     }
 
     #typing {
@@ -26,6 +27,23 @@
       }
     }
 
+    button {
+      background-color: #0f0;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      margin-top: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0a0;
+    }
+
     footer {
       margin-top: 50px;
       font-size: 14px;
@@ -34,37 +52,49 @@
   </style>
 </head>
 <body>
-  <h2>🧠 Kata-kata Motivasi oleh <span style="color:#00ff88">Bayu Escobar</span></h2>
+  <h2>🌙 Kutipan Islami oleh <span style="color:#00ff88">Bayu Escobar</span></h2>
   <div id="typing"></div>
 
-  <footer>Semua butuh proses. Bahkan sabar pun butuh latihan — Bayu Escobar © 2025</footer>
+  <button onclick="paksaLanjut()">LANJUTKAN ➤</button>
+
+  <footer>“Sabar dan syukur adalah dua sayap seorang mukmin.” — Bayu Escobar © 2025</footer>
+
+  <!-- Suara Ketikan -->
+  <audio id="sound" src="https://www.myinstants.com/media/sounds/typewriter-key.mp3" preload="auto"></audio>
 
   <script>
     const quotes = [
-      "1. Di balik kesabaran, pasti ada hikmahnya. Yakinlah hidup memang penuh rintangan, kesedihan, dan penderitaan. Tanpa semua itu, kamu tak akan pernah merasakan kebahagiaan yang sesungguhnya.",
-      "2. Bagi seseorang yang mampu bersabar maka mereka akan mendapat ketidakseimbangan yang setimpal dengan semua akan kesabarannya.",
-      "3. Terkadang orang-orang mengaku sabar, padahal mereka sebenarnya menyerah pada suatu masalah tanpa berusaha untuk mencari jalan keluarnya.",
-      "4. Terimalah kekecewaan yang hanya sementara, jangan sampai kehilangan harapan yang tidak terbatas.",
-      "5. Sebuah tidak akan pernah menjadi sulit apabila kamu bisa melewatinya dengan kesabaran dan keikhlasan.",
-      "6. Sabar mempunyai dua sisi, sisi yang satu adalah sabar, sisi yang lain adalah bersyukur kepada Allah.",
-      "7. Aku mencari segala bentuk rezeki, tapi tidak menemukan rezeki yang lebih baik daripada sabar.",
-      "8. Orang yang kuat bukan mereka yang selalu menang. Melainkan mereka yang tetap tegar ketika mereka jatuh.",
-      "9. Tidak ada waktu untuk mengeluh. Sabar, ikhlas, lalu lanjutkan hidupmu.",
-      "10. Sabar itu ilmu tingkat tinggi. Belajarnya setiap hari, latihannya setiap saat, ujiannya sering mendadak, sekolahnya seumur hidup."
+      "1. Sabar itu cahaya. Dalam sabar, Allah siapkan hadiah terbaik di waktu terbaik.",
+      "2. Jangan bersedih, sesungguhnya Allah bersama kita. (QS. At-Taubah: 40)",
+      "3. Siapa yang bertakwa kepada Allah, niscaya Dia akan menjadikan jalan keluar baginya. (QS. At-Talaq: 2)",
+      "4. Allah tidak membebani seseorang melainkan sesuai dengan kesanggupannya. (QS. Al-Baqarah: 286)",
+      "5. Ingatlah Allah, niscaya hatimu menjadi tenang. (QS. Ar-Ra'd: 28)",
+      "6. Barang siapa bersyukur, maka akan Kutambah nikmatnya. (QS. Ibrahim: 7)",
+      "7. Sesungguhnya bersama kesulitan ada kemudahan. (QS. Al-Insyirah: 6)",
+      "8. Dunia ini adalah tempat ujian, bukan tempat balasan. Maka bersabarlah.",
+      "9. Doa itu senjata orang beriman. Jangan berhenti memohon pada Allah.",
+      "10. Hidup bukan tentang seberapa sering kita jatuh, tapi seberapa sering kita kembali kepada Allah."
     ];
 
     let index = 0;
     let charIndex = 0;
     let currentQuote = "";
+    let isTyping = false;
     const typingEl = document.getElementById("typing");
+    const sound = document.getElementById("sound");
 
     function ketik() {
+      isTyping = true;
       if (charIndex < currentQuote.length) {
         typingEl.textContent += currentQuote.charAt(charIndex);
         charIndex++;
-        setTimeout(ketik, 30);
+        if (currentQuote.charAt(charIndex - 1) !== " ") {
+          sound.currentTime = 0;
+          sound.play();
+        }
+        setTimeout(ketik, 35);
       } else {
-        setTimeout(nextQuote, 2000);
+        isTyping = false;
       }
     }
 
@@ -74,6 +104,16 @@
       charIndex = 0;
       typingEl.textContent = "";
       ketik();
+    }
+
+    function paksaLanjut() {
+      if (isTyping) {
+        typingEl.textContent = currentQuote;
+        charIndex = currentQuote.length;
+        isTyping = false;
+      } else {
+        nextQuote();
+      }
     }
 
     // Mulai dari kutipan pertama
