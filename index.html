@@ -2,42 +2,83 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Pendaftaran Darul Hadi</title>
+  <title>Motivasi Bayu Escobar</title>
   <style>
     body {
-      background-color: #001100;
-      color: #00ff88;
-      font-family: "Courier New", monospace;
-      padding: 40px;
-      text-align: center;
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      padding: 50px;
+      font-size: 20px;
     }
 
-    iframe {
-      border: none;
-      width: 100%;
-      height: 600px;
-      max-width: 600px;
+    #typing {
+      white-space: pre-wrap;
+      border-right: 2px solid #0f0;
+      padding-right: 5px;
+      animation: blink 0.7s steps(1) infinite;
+      min-height: 150px;
     }
 
-    h1 {
-      color: #00ff88;
-      margin-bottom: 20px;
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
     }
 
     footer {
-      margin-top: 40px;
-      color: #999;
+      margin-top: 50px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <h1>🕌 Pendaftaran Pondok Pesantren Darul Hadi</h1>
-  <p>Silakan isi formulir di bawah ini untuk mendaftar.</p>
+  <h2>🧠 Kata-kata Motivasi oleh <span style="color:#00ff88">Bayu Escobar</span></h2>
+  <div id="typing"></div>
 
-  <iframe src="https://forms.gle/abc123" loading="lazy"></iframe>
+  <footer>Semua butuh proses. Bahkan sabar pun butuh latihan — Bayu Escobar © 2025</footer>
 
-  <footer>
-    Dibuat oleh <strong>Bayu Escobar</strong> &copy; 2025
-  </footer>
+  <script>
+    const quotes = [
+      "1. Di balik kesabaran, pasti ada hikmahnya. Yakinlah hidup memang penuh rintangan, kesedihan, dan penderitaan. Tanpa semua itu, kamu tak akan pernah merasakan kebahagiaan yang sesungguhnya.",
+      "2. Bagi seseorang yang mampu bersabar maka mereka akan mendapat ketidakseimbangan yang setimpal dengan semua akan kesabarannya.",
+      "3. Terkadang orang-orang mengaku sabar, padahal mereka sebenarnya menyerah pada suatu masalah tanpa berusaha untuk mencari jalan keluarnya.",
+      "4. Terimalah kekecewaan yang hanya sementara, jangan sampai kehilangan harapan yang tidak terbatas.",
+      "5. Sebuah tidak akan pernah menjadi sulit apabila kamu bisa melewatinya dengan kesabaran dan keikhlasan.",
+      "6. Sabar mempunyai dua sisi, sisi yang satu adalah sabar, sisi yang lain adalah bersyukur kepada Allah.",
+      "7. Aku mencari segala bentuk rezeki, tapi tidak menemukan rezeki yang lebih baik daripada sabar.",
+      "8. Orang yang kuat bukan mereka yang selalu menang. Melainkan mereka yang tetap tegar ketika mereka jatuh.",
+      "9. Tidak ada waktu untuk mengeluh. Sabar, ikhlas, lalu lanjutkan hidupmu.",
+      "10. Sabar itu ilmu tingkat tinggi. Belajarnya setiap hari, latihannya setiap saat, ujiannya sering mendadak, sekolahnya seumur hidup."
+    ];
+
+    let index = 0;
+    let charIndex = 0;
+    let currentQuote = "";
+    const typingEl = document.getElementById("typing");
+
+    function ketik() {
+      if (charIndex < currentQuote.length) {
+        typingEl.textContent += currentQuote.charAt(charIndex);
+        charIndex++;
+        setTimeout(ketik, 30);
+      } else {
+        setTimeout(nextQuote, 2000);
+      }
+    }
+
+    function nextQuote() {
+      index = (index + 1) % quotes.length;
+      currentQuote = quotes[index];
+      charIndex = 0;
+      typingEl.textContent = "";
+      ketik();
+    }
+
+    // Mulai dari kutipan pertama
+    currentQuote = quotes[index];
+    ketik();
+  </script>
 </body>
 </html>
