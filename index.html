@@ -2,66 +2,84 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>🔥 Hacker Virus War</title>
+  <title>📊 Trading Bayu Escobar</title>
   <style>
     body {
-      background-color: black;
+      margin: 0;
+      background: #000;
       color: #0f0;
       font-family: "Courier New", monospace;
       padding: 20px;
-      overflow: hidden;
     }
 
-    #terminal {
-      white-space: pre-wrap;
-      font-size: 16px;
-      text-shadow: 0 0 5px #0f0;
-      animation: ketik 1s steps(1) infinite;
-    }
-
-    @keyframes ketik {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-    }
-
-    .glow {
+    h1 {
       color: #0f0;
-      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px #0f0;
+    }
+
+    .card {
+      background-color: #111;
+      border: 1px solid #0f0;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 10px #0f0;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .green { color: #0f0; }
+    .red { color: red; }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      color: #888;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <h2 class="glow">🧬 SIMULASI PERANG VIRUS HACKER - BY BAYU ESCOBAR</h2>
-  <div id="terminal">Memulai sistem...</div>
+  <h1>💰 DASHBOARD TRADING</h1>
+
+  <div class="card">
+    <h2>Bitcoin (BTC)</h2>
+    <div class="price" id="btcPrice">Loading...</div>
+  </div>
+
+  <div class="card">
+    <h2>Ethereum (ETH)</h2>
+    <div class="price" id="ethPrice">Loading...</div>
+  </div>
+
+  <footer>
+    Dibuat oleh <strong>Bayu Escobar</strong> &copy; 2025
+  </footer>
 
   <script>
-    const terminal = document.getElementById("terminal");
-    const logs = [
-      "[SISTEM] Mengakses inti jaringan...",
-      "[VIRUS] 🔥 Menyusup ke port 8080...",
-      "[SISTEM] 🔒 Firewall aktif...",
-      "[VIRUS] ⚠️ Bypass enkripsi...",
-      "[SISTEM] 🛡️ Serangan terdeteksi!",
-      "[VIRUS] 🧬 Menginjeksi file system32...",
-      "[SISTEM] ⛔ Karantina aktif!",
-      "[VIRUS] ❌ Terblokir oleh AI-Protector v2.1",
-      "[SISTEM] ✅ Sistem berhasil bertahan.",
-      "[SISTEM] Menyimpan log ke cloud...",
-      "[SISTEM] 🔁 Memulai ulang server...",
-      "=== SIMULASI SELESAI ==="
-    ];
+    function updatePrice(id, min, max) {
+      const price = (Math.random() * (max - min) + min).toFixed(2);
+      const el = document.getElementById(id);
+      el.textContent = "$ " + price;
 
-    let i = 0;
-    function tampilkanLog() {
-      if (i < logs.length) {
-        terminal.textContent += "\n" + logs[i];
-        i++;
-        setTimeout(tampilkanLog, 1000);
-      }
+      el.classList.remove("green", "red");
+      el.classList.add(Math.random() > 0.5 ? "green" : "red");
     }
 
-    setTimeout(tampilkanLog, 1000);
+    function refreshPrices() {
+      updatePrice("btcPrice", 54000, 59000);
+      updatePrice("ethPrice", 2700, 3200);
+    }
+
+    setInterval(refreshPrices, 2000);
+    refreshPrices(); // run once on load
   </script>
 </body>
 </html>
