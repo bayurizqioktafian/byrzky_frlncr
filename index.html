@@ -2,65 +2,66 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Game Tebak Angka - Bayu Escobar</title>
+  <title>🔥 Hacker Virus War</title>
   <style>
     body {
-      background-color: #111;
+      background-color: black;
       color: #0f0;
-      font-family: monospace;
-      text-align: center;
-      padding: 50px;
+      font-family: "Courier New", monospace;
+      padding: 20px;
+      overflow: hidden;
     }
 
-    input, button {
-      padding: 10px;
-      font-size: 18px;
-      margin-top: 10px;
+    #terminal {
+      white-space: pre-wrap;
+      font-size: 16px;
+      text-shadow: 0 0 5px #0f0;
+      animation: ketik 1s steps(1) infinite;
     }
 
-    #hasil {
-      margin-top: 20px;
-      font-size: 20px;
+    @keyframes ketik {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
     }
 
-    footer {
-      margin-top: 50px;
-      color: #888;
+    .glow {
+      color: #0f0;
+      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
     }
   </style>
 </head>
 <body>
-  <h1>🎮 Game Tebak Angka</h1>
-  <p>Tebak angka dari 1 sampai 10</p>
-
-  <input type="number" id="tebakan" min="1" max="10" placeholder="Masukkan angka...">
-  <br>
-  <button onclick="cekTebakan()">Tebak!</button>
-
-  <div id="hasil"></div>
-
-  <footer>
-    Dibuat oleh <strong>Bayu Escobar</strong> &copy; 2025
-  </footer>
+  <h2 class="glow">🧬 SIMULASI PERANG VIRUS HACKER - BY BAYU ESCOBAR</h2>
+  <div id="terminal">Memulai sistem...</div>
 
   <script>
-    const angkaBenar = Math.floor(Math.random() * 10) + 1;
+    const terminal = document.getElementById("terminal");
+    const logs = [
+      "[SISTEM] Mengakses inti jaringan...",
+      "[VIRUS] 🔥 Menyusup ke port 8080...",
+      "[SISTEM] 🔒 Firewall aktif...",
+      "[VIRUS] ⚠️ Bypass enkripsi...",
+      "[SISTEM] 🛡️ Serangan terdeteksi!",
+      "[VIRUS] 🧬 Menginjeksi file system32...",
+      "[SISTEM] ⛔ Karantina aktif!",
+      "[VIRUS] ❌ Terblokir oleh AI-Protector v2.1",
+      "[SISTEM] ✅ Sistem berhasil bertahan.",
+      "[SISTEM] Menyimpan log ke cloud...",
+      "[SISTEM] 🔁 Memulai ulang server...",
+      "=== SIMULASI SELESAI ==="
+    ];
 
-    function cekTebakan() {
-      const tebakan = parseInt(document.getElementById("tebakan").value);
-      const hasil = document.getElementById("hasil");
-
-      if (isNaN(tebakan) || tebakan < 1 || tebakan > 10) {
-        hasil.textContent = "Masukkan angka dari 1 sampai 10!";
-        return;
-      }
-
-      if (tebakan === angkaBenar) {
-        hasil.textContent = "🎉 Selamat! Kamu benar!";
-      } else {
-        hasil.textContent = `❌ Salah. Coba lagi!`;
+    let i = 0;
+    function tampilkanLog() {
+      if (i < logs.length) {
+        terminal.textContent += "\n" + logs[i];
+        i++;
+        setTimeout(tampilkanLog, 1000);
       }
     }
+
+    setTimeout(tampilkanLog, 1000);
   </script>
 </body>
 </html>
