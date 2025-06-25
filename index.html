@@ -3,54 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jasa Pilihan</title>
+  <title>Bayu Escobar</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      background-image: url('https://i.ibb.co/xJKrkWy/hacker-gun.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-    .box {
-      background: #1e293b;
+    .overlay {
+      background: rgba(0, 0, 0, 0.75);
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px #000;
-      max-width: 400px;
+      border-radius: 20px;
+      max-width: 90%;
     }
-    label {
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .contact a {
       display: block;
-      margin: 15px 0;
-      cursor: pointer;
+      margin: 10px 0;
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
     }
-    input[type="radio"] {
-      margin-right: 10px;
-      transform: scale(1.2);
+    .contact a:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>Pilih Jasa:</h2>
-    <form id="formJasa">
-      <label><input type="radio" name="jasa" value="https://example.com/tulis-tangan" /> Tulis tangan (Inggris, Arab, Indo)</label>
-      <label><input type="radio" name="jasa" value="https://example.com/ketik-artikel" /> Ketik Artikel</label>
-      <label><input type="radio" name="jasa" value="https://example.com/ulas-apk" /> Ulas Aplikasi</label>
-      <label><input type="radio" name="jasa" value="https://example.com/joki-tugas" /> Joki Tugas</label>
-    </form>
+  <div class="overlay">
+    <h1>SELAMAT DATANG DI BAYU ESCOBAR</h1>
+    <p>ANDA BISA MENGHUBUNGI SAYA</p>
+    <div class="contact">
+      <a href="https://wa.me/6285604682974" target="_blank">📱 WhatsApp: 0856 0468 2974</a>
+      <a href="https://instagram.com/bayurizqioktafian_" target="_blank">📸 Instagram: bayurizqioktafian_</a>
+      <a href="https://www.facebook.com/byurzkyadminsantuy" target="_blank">📘 Facebook: byurzkyadminsantuy</a>
+    </div>
   </div>
-
-  <script>
-    const form = document.getElementById('formJasa');
-    form.addEventListener('change', (e) => {
-      if (e.target.name === 'jasa') {
-        const targetURL = e.target.value;
-        window.location.href = targetURL;
-      }
-    });
-  </script>
 </body>
 </html>
