@@ -1,58 +1,74 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kontak Bayu</title>
+  <title>Jasa Online Bayu</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
-      background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
     }
-    .card {
-      background: white;
+    .container {
+      background: rgba(0, 0, 0, 0.75);
+      max-width: 400px;
+      margin: 60px auto;
       padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-      max-width: 400px;
-      width: 90%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     }
-    .card h1 {
-      color: #333;
+    h1 {
+      text-align: center;
       margin-bottom: 20px;
     }
-    .card a {
+    label {
       display: block;
-      margin: 10px 0;
-      padding: 12px;
-      border-radius: 8px;
+      margin: 15px 0;
+      cursor: pointer;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+    .btn-group {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    a.button {
       text-decoration: none;
+      background: #007bff;
       color: white;
-      font-weight: bold;
+      padding: 12px;
+      text-align: center;
+      border-radius: 8px;
       transition: background 0.3s ease;
     }
-    .facebook { background: #3b5998; }
-    .instagram { background: #e4405f; }
-    .whatsapp { background: #25D366; }
-    .card a:hover {
-      filter: brightness(1.1);
+    a.button:hover {
+      background: #0056b3;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Hubungi Bayu</h1>
-    <a class="facebook" href="https://facebook.com/bayu%20escobar" target="_blank">Facebook</a>
-    <a class="instagram" href="https://instagram.com/bayurizqioktafian_" target="_blank">Instagram</a>
-    <a class="whatsapp" href="https://wa.me/6285604682974" target="_blank">WhatsApp</a>
+  <div class="container">
+    <h1>Pilih Jasa yang Anda Butuhkan</h1>
+    <form>
+      <label><input type="radio" name="jasa" /> Tulis tangan (Inggris, Arab, Indo)</label>
+      <label><input type="radio" name="jasa" /> Ketik artikel</label>
+      <label><input type="radio" name="jasa" /> Ulas aplikasi</label>
+      <label><input type="radio" name="jasa" /> Joki tugas</label>
+    </form>
+
+    <div class="btn-group">
+      <a class="button" href="https://instagram.com/bayurizqioktafian_" target="_blank">📸 Instagram</a>
+      <a class="button" href="https://wa.me/6285604682974" target="_blank">💬 WhatsApp</a>
+      <a class="button" href="https://www.facebook.com/byurzkyadminsantuy" target="_blank">📘 Facebook</a>
+    </div>
   </div>
 </body>
 </html>
