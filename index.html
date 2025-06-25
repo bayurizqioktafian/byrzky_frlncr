@@ -3,27 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jasa Online Bayu</title>
+  <title>Jasa Pilihan</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f') no-repeat center center fixed;
-      background-size: cover;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
       color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    .container {
-      background: rgba(0, 0, 0, 0.75);
-      max-width: 400px;
-      margin: 60px auto;
+    .box {
+      background: #1e293b;
       padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #000;
+      max-width: 400px;
     }
     label {
       display: block;
@@ -34,41 +30,27 @@
       margin-right: 10px;
       transform: scale(1.2);
     }
-    .btn-group {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    a.button {
-      text-decoration: none;
-      background: #007bff;
-      color: white;
-      padding: 12px;
-      text-align: center;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-    a.button:hover {
-      background: #0056b3;
-    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Pilih Jasa yang Anda Butuhkan</h1>
-    <form>
-      <label><input type="radio" name="jasa" /> Tulis tangan (Inggris, Arab, Indo)</label>
-      <label><input type="radio" name="jasa" /> Ketik artikel</label>
-      <label><input type="radio" name="jasa" /> Ulas aplikasi</label>
-      <label><input type="radio" name="jasa" /> Joki tugas</label>
+  <div class="box">
+    <h2>Pilih Jasa:</h2>
+    <form id="formJasa">
+      <label><input type="radio" name="jasa" value="https://example.com/tulis-tangan" /> Tulis tangan (Inggris, Arab, Indo)</label>
+      <label><input type="radio" name="jasa" value="https://example.com/ketik-artikel" /> Ketik Artikel</label>
+      <label><input type="radio" name="jasa" value="https://example.com/ulas-apk" /> Ulas Aplikasi</label>
+      <label><input type="radio" name="jasa" value="https://example.com/joki-tugas" /> Joki Tugas</label>
     </form>
-
-    <div class="btn-group">
-      <a class="button" href="https://instagram.com/bayurizqioktafian_" target="_blank">📸 Instagram</a>
-      <a class="button" href="https://wa.me/6285604682974" target="_blank">💬 WhatsApp</a>
-      <a class="button" href="https://www.facebook.com/byurzkyadminsantuy" target="_blank">📘 Facebook</a>
-    </div>
   </div>
+
+  <script>
+    const form = document.getElementById('formJasa');
+    form.addEventListener('change', (e) => {
+      if (e.target.name === 'jasa') {
+        const targetURL = e.target.value;
+        window.location.href = targetURL;
+      }
+    });
+  </script>
 </body>
 </html>
