@@ -2,65 +2,75 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bayu Escobar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bayu Escobar - Anonymous</title>
+
+  <!-- Font Awesome (ikon aplikasi) -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-image: url('https://i.ibb.co/1rJmYx5/anonymous-hacker.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
       height: 100vh;
-      color: white;
+      background: url('https://i.ibb.co/4PN0X96/anonymous-hacker.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex; justify-content: center; align-items: center;
+      text-align: center; color: #fff;
+    }
+    .container {
+      background: rgba(0,0,0,0.75);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,255,0,0.4);
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-    }
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.75);
-      padding: 40px;
-      border-radius: 16px;
-      width: 90%;
-      max-width: 500px;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    p {
-      margin-bottom: 20px;
-      font-size: 1.1em;
-    }
-    a {
-      display: block;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 8px;
-      background-color: #00ffff;
+      gap: 10px;
+      background-color: #00ffcc;
       color: #000;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s;
+      padding: 12px 18px;
+      margin: 10px auto;
+      width: 80%;
+      border-radius: 8px;
+      transition: 0.3s;
     }
-    a:hover {
-      background-color: #00cccc;
+    .btn:hover {
+      background-color: #00ffff;
+      transform: scale(1.05);
+    }
+    .btn i {
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>SELAMAT DATANG DI BAYU ESCOBAR</h1>
-    <p>ANDA BISA MENGHUBUNGI SAYA:</p>
-    <a href="https://wa.me/6285604682974" target="_blank">📱 WhatsApp: 0856 0468 2974</a>
-    <a href="https://instagram.com/bayurizqioktafian_" target="_blank">📸 Instagram: bayurizqioktafian_</a>
-    <a href="https://www.facebook.com/byurzkyadminsantuy" target="_blank">📘 Facebook: byurzkyadminsantuy</a>
+  <div class="container">
+    <h1>🕶️ SELAMAT DATANG DI BAYU ESCOBAR</h1>
+    <p>Silakan hubungi saya lewat tombol di bawah ini:</p>
+
+    <a href="https://wa.me/6285604682974" class="btn" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <a href="https://instagram.com/bayurizqioktafian_" class="btn" target="_blank">
+      <i class="fa-brands fa-instagram"></i> Instagram
+    </a>
+
+    <a href="https://www.facebook.com/byurzkyadminsantuy" class="btn" target="_blank">
+      <i class="fa-brands fa-facebook"></i> Facebook
+    </a>
   </div>
 </body>
 </html>
