@@ -5,62 +5,68 @@
   <title>Bayu Escobar - Rumah Online</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
       background-color: #000;
       color: #00ff00;
-      font-family: 'Courier New', monospace;
-      background-image: radial-gradient(circle, #002200, #000000);
-      overflow-x: hidden;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 40px;
+      text-align: center;
     }
 
-    /* Efek ketikan berjalan */
-    .typewriter-container {
+    .typewriter {
+      display: inline-block;
+      font-size: 18px;
+      border-right: 2px solid #00ff00;
       white-space: nowrap;
       overflow: hidden;
-      box-sizing: border-box;
-      padding: 20px;
-      border-bottom: 1px solid #00ff00;
-    }
-
-    .typewriter-text {
-      display: inline-block;
-      animation: typing 30s linear infinite;
-      font-size: 18px;
-      color: #00ff00;
+      animation: typing 10s steps(100, end), blink 0.75s step-end infinite;
+      max-width: 90%;
     }
 
     @keyframes typing {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+      from { width: 0 }
+      to { width: 100% }
     }
 
-    .content {
-      text-align: center;
-      padding: 30px 20px;
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #00ff00 }
     }
 
     .hacker-img {
       width: 200px;
-      margin: 20px auto;
-      display: block;
+      margin: 40px auto;
       filter: drop-shadow(0 0 20px #00ff00);
     }
 
     .sosmed {
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     .sosmed a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       color: #00ffff;
       text-decoration: none;
       font-size: 16px;
-      display: inline-block;
-      margin: 5px 0;
+      margin: 10px;
+      padding: 8px 14px;
+      border: 1px solid #00ffff;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .sosmed a:hover {
+      background: #003333;
+    }
+
+    .sosmed img {
+      width: 24px;
+      height: 24px;
     }
 
     .footer {
-      margin-top: 30px;
+      margin-top: 40px;
       font-size: 20px;
       color: #00ffcc;
       font-weight: bold;
@@ -69,23 +75,28 @@
 </head>
 <body>
 
-  <div class="typewriter-container">
-    <div class="typewriter-text">
-      Selamat datang di rumah online Bayu Escobar — Anda sopan kami Yoman. Jika ada keperluan bisa hubungi sosial media saya di bawah ini.
-    </div>
+  <div class="typewriter">
+    Selamat datang di rumah online Bayu Escobar — Anda sopan kami Yoman. Jika ada keperluan bisa hubungi sosial media saya di bawah ini.
   </div>
 
-  <div class="content">
-    <img src="https://i.ibb.co/zf0jPf8/anonymous.png" alt="Hacker Mask" class="hacker-img">
+  <img src=<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Guy_Fawkes_mask.svg/1200px-Guy_Fawkes_mask.svg.png" alt="Hacker Mask" class="hacker-img">
 
-    <div class="sosmed">
-      <p>📘 Facebook: <a href="https://www.facebook.com/byurzkyadminsantuy" target="_blank">byurzkyadminsantuy</a></p>
-      <p>📷 Instagram: <a href="#" onclick="alert('Cari akun IG: bayurizqioktafian_'); return false;">@bayurizqioktafian_</a></p>
-      <p>📱 WhatsApp: <a href="https://wa.me/6285604682974" target="_blank">085604682974</a></p>
-    </div>
-
-    <div class="footer">Terimakasih Sudah Berkunjung</div>
+  <div class="sosmed">
+    <a href="https://www.facebook.com/byurzkyadminsantuy" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      Facebook: byurzkyadminsantuy
+    </a><br>
+    <a href="#" onclick="alert('Cari di IG: bayurizqioktafian_'); return false;">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      Instagram: bayurizqioktafian_
+    </a><br>
+    <a href="https://wa.me/6285604682974" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      WhatsApp: 085604682974
+    </a>
   </div>
+
+  <div class="footer">Terimakasih Sudah Berkunjung</div>
 
 </body>
 </html>
