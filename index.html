@@ -1,96 +1,97 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bayu Rizqi Oktafian</title>  <!-- Font Awesome untuk ikon -->  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <title>Bayu Rizqi Oktafian</title>
+  <style>
     body {
-      height: 100vh;
-      background: url('https://i.ibb.co/4PN0X96/anonymous-hacker.jpg') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin: 0;
+      padding: 0;
       font-family: monospace;
-      color: #00ffcc;
-      padding: 20px;
-    }
-    .container {
-      background: rgba(0,0,0,0.7);
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 800px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,255,0,.4);
-    }
-    .typing {
-      font-size: 18px;
-      white-space: pre-line;
-      border-right: 2px solid #00ffcc;
+      background-color: black;
+      color: #00ff00;
+      background-image: radial-gradient(circle, #001100 10%, #000000 90%);
+      height: 100vh;
       overflow: hidden;
-      animation: typing 5s steps(60, end), blink-caret 0.75s step-end infinite;
     }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #00ffcc; }
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: #00ffcc;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 12px 20px;
-      margin: 15px 10px;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background-color: #00ffff;
-      transform: scale(1.05);
-    }
-  </style></head>
-<body>
-  <div class="container">
-    <div id="text" class="typing"></div><div style="margin-top: 30px;">
-  <a href="https://wa.me/6285604682974" class="btn" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-  </a>
-  <a href="https://instagram.com/bayurizqioktafian_" class="btn" target="_blank">
-    <i class="fa-brands fa-instagram"></i> Instagram
-  </a>
-  <a href="https://www.facebook.com/byurzkyadminsantuy" class="btn" target="_blank">
-    <i class="fa-brands fa-facebook"></i> Facebook
-  </a>
-</div>
 
-  </div>  <!-- Efek suara ketikan --><audio id="typeSound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+    .marquee {
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      position: absolute;
+      top: 20px;
+      width: 100%;
+    }
 
-  <script>
-    const text = "Selamat datang di Bayu Rizqi Oktafian.\nAnda sopan kami yoman.\nJika ada keperluan, Anda bisa hubungi saya lewat sosial media di bawah ini.";
-    const output = document.getElementById("text");
-    const typeSound = document.getElementById("typeSound");
+    .marquee p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 20s linear infinite;
+      font-size: 18px;
+    }
 
-    let index = 0;
-    function typeWriter() {
-      if (index < text.length) {
-        output.textContent += text.charAt(index);
-        typeSound.currentTime = 0;
-        typeSound.play();
-        index++;
-        setTimeout(typeWriter, 50);
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
       }
     }
 
-    typeWriter();
-  </script></body>
+    .konten {
+      position: absolute;
+      top: 100px;
+      left: 20px;
+      right: 20px;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .kontak p {
+      margin: 5px 0;
+    }
+
+    .arabic {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #00ffcc;
+      font-weight: bold;
+    }
+
+    .hacker-img {
+      margin-top: 30px;
+      max-width: 300px;
+      width: 100%;
+      filter: drop-shadow(0 0 10px #00ff00);
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="marquee">
+    <p>Selamat datang di Bayu Rizqi Oktafian. Anda sopan kami Yoman. Kalau ada keperluan bisa hubungi saya lewat sosial media di bawah ini.</p>
+  </div>
+
+  <div class="konten">
+    <img src="https://i.ibb.co/zf0jPf8/anonymous.png" alt="Hacker Anonymous" class="hacker-img">
+
+    <div class="kontak">
+      <p>📘 Facebook: <a href="https://www.facebook.com/byurzkyadminsantuy" target="_blank" style="color:#00ffff">byurzkyadminsantuy</a></p>
+      <p>📱 WhatsApp: <a href="https://wa.me/6285604682974" target="_blank" style="color:#00ffff">085604682974</a></p>
+      <p>📷 Instagram: <span style="color:#00ffff">@BayuRizqioktafian_</span></p>
+    </div>
+
+    <div class="arabic">
+      شُكْرًا جَزِيْلًا
+    </div>
+  </div>
+
+</body>
 </html>
