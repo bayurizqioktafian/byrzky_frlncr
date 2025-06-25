@@ -2,172 +2,42 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Investasi ByrzkyInvest</title>
+  <title>Pendaftaran Darul Hadi</title>
   <style>
     body {
-      background-color: #000;
-      color: #0f0;
+      background-color: #001100;
+      color: #00ff88;
       font-family: "Courier New", monospace;
-      text-align: center;
       padding: 40px;
+      text-align: center;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: 600px;
+      max-width: 600px;
     }
 
     h1 {
-      margin-bottom: 40px;
-      font-size: 32px;
-      text-shadow: 0 0 10px #0f0;
-    }
-
-    .card {
-      background-color: #111;
-      border: 1px solid #0f0;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px auto;
-      width: 80%;
-      max-width: 400px;
-      box-shadow: 0 0 10px #0f0;
-    }
-
-    select, button {
-      padding: 10px;
-      font-size: 18px;
-      margin: 10px;
-      width: 100%;
-      border: 1px solid #0f0;
-      border-radius: 5px;
-      background-color: #222;
-      color: #0f0;
-      cursor: pointer;
-    }
-
-    button {
-      margin-top: 20px;
-      background-color: #0f0;
-      color: #000;
-      font-weight: bold;
-    }
-
-    #saldo {
-      margin-top: 20px;
-      font-size: 24px;
-      font-weight: bold;
+      color: #00ff88;
+      margin-bottom: 20px;
     }
 
     footer {
       margin-top: 40px;
-      color: #888;
-      font-size: 14px;
+      color: #999;
     }
   </style>
 </head>
 <body>
-  <h1>💰 Investasi ByrzkyInvest</h1>
-  <div class="card">
-    <label for="nominal">Pilih Nominal Investasi</label>
-    <select id="nominal">
-      <option value="50000">50.000</option>
-      <option value="100000">100.000</option>
-      <option value="200000">200.000</option>
-      <option value="400000">400.000</option>
-    </select>
+  <h1>🕌 Pendaftaran Pondok Pesantren Darul Hadi</h1>
+  <p>Silakan isi formulir di bawah ini untuk mendaftar.</p>
 
-    <label for="pembayaran">Pilih Metode Pembayaran</label>
-    <select id="pembayaran">
-      <option value="Dana">Dana</option>
-      <option value="Gopay">Gopay</option>
-      <option value="Seabank">Seabank</option>
-    </select>
-
-    <button onclick="updateSaldo()">Konfirmasi Investasi</button>
-
-    <div id="saldo">Saldo Anda: Rp 0</div>
-  </div>
+  <iframe src="https://forms.gle/abc123" loading="lazy"></iframe>
 
   <footer>
     Dibuat oleh <strong>Bayu Escobar</strong> &copy; 2025
   </footer>
-
-  <script>
-    function updateSaldo() {
-      const nominal = document.getElementById("nominal").value;
-      const saldoDisplay = document.getElementById("saldo");
-
-      saldoDisplay.innerHTML = `Saldo Anda: Rp ${nominal}`;
-
-      alert(`Anda memilih investasi sebesar Rp ${nominal} melalui ${document.getElementById("pembayaran").value}`);
-    }
-  </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>ByrzkyInvest</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #0f0;
-      font-family: monospace;
-      text-align: center;
-      padding: 40px;
-    }
-
-    .card {
-      background-color: #111;
-      border: 1px solid #0f0;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 0 10px #0f0;
-    }
-
-    select, button {
-      padding: 10px;
-      font-size: 18px;
-      margin: 10px;
-      width: 100%;
-      border: 1px solid #0f0;
-      border-radius: 5px;
-      background-color: #222;
-      color: #0f0;
-    }
-
-    button {
-      margin-top: 20px;
-      background-color: #0f0;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    #saldo {
-      margin-top: 20px;
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    footer {
-      margin-top: 40px;
-      color: #888;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-  <h1>📈 ByrzkyInvest</h1>
-  <div class="card">
-    <label>Nominal Investasi</label>
-    <select id="nominal">
-      <option value="50000">Rp 50.000</option>
-      <option value="100000">Rp 100.000</option>
-      <option value="200000">Rp 200.000</option>
-      <option value="400000">Rp 400.000</option>
-    </select>
-
-    <label>Metode Pembayaran</label>
-    <select id="pembayaran">
-      <option value="dana">DANA</option>
