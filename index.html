@@ -1,48 +1,56 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bayu Escobar - Anonymous</title>
-
-  <!-- Font Awesome (ikon aplikasi) -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
+  <title>Bayu Rizqi Oktafian</title>  <!-- Font Awesome untuk ikon -->  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       height: 100vh;
       background: url('https://i.ibb.co/4PN0X96/anonymous-hacker.jpg') no-repeat center center fixed;
       background-size: cover;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex; justify-content: center; align-items: center;
-      text-align: center; color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: monospace;
+      color: #00ffcc;
+      padding: 20px;
     }
     .container {
-      background: rgba(0,0,0,0.75);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0,255,0,0.4);
-      max-width: 600px;
+      background: rgba(0,0,0,0.7);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,255,0,.4);
     }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 20px;
+    .typing {
+      font-size: 18px;
+      white-space: pre-line;
+      border-right: 2px solid #00ffcc;
+      overflow: hidden;
+      animation: typing 5s steps(60, end), blink-caret 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #00ffcc; }
     }
     .btn {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
+      gap: 8px;
       background-color: #00ffcc;
       color: #000;
       text-decoration: none;
       font-weight: bold;
-      padding: 12px 18px;
-      margin: 10px auto;
-      width: 80%;
+      padding: 12px 20px;
+      margin: 15px 10px;
       border-radius: 8px;
       transition: 0.3s;
     }
@@ -50,27 +58,39 @@
       background-color: #00ffff;
       transform: scale(1.05);
     }
-    .btn i {
-      font-size: 18px;
-    }
-  </style>
-</head>
+  </style></head>
 <body>
   <div class="container">
-    <h1>🕶️ SELAMAT DATANG DI BAYU ESCOBAR</h1>
-    <p>Silakan hubungi saya lewat tombol di bawah ini:</p>
+    <div id="text" class="typing"></div><div style="margin-top: 30px;">
+  <a href="https://wa.me/6285604682974" class="btn" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+  </a>
+  <a href="https://instagram.com/bayurizqioktafian_" class="btn" target="_blank">
+    <i class="fa-brands fa-instagram"></i> Instagram
+  </a>
+  <a href="https://www.facebook.com/byurzkyadminsantuy" class="btn" target="_blank">
+    <i class="fa-brands fa-facebook"></i> Facebook
+  </a>
+</div>
 
-    <a href="https://wa.me/6285604682974" class="btn" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i> WhatsApp
-    </a>
+  </div>  <!-- Efek suara ketikan --><audio id="typeSound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
 
-    <a href="https://instagram.com/bayurizqioktafian_" class="btn" target="_blank">
-      <i class="fa-brands fa-instagram"></i> Instagram
-    </a>
+  <script>
+    const text = "Selamat datang di Bayu Rizqi Oktafian.\nAnda sopan kami yoman.\nJika ada keperluan, Anda bisa hubungi saya lewat sosial media di bawah ini.";
+    const output = document.getElementById("text");
+    const typeSound = document.getElementById("typeSound");
 
-    <a href="https://www.facebook.com/byurzkyadminsantuy" class="btn" target="_blank">
-      <i class="fa-brands fa-facebook"></i> Facebook
-    </a>
-  </div>
-</body>
+    let index = 0;
+    function typeWriter() {
+      if (index < text.length) {
+        output.textContent += text.charAt(index);
+        typeSound.currentTime = 0;
+        typeSound.play();
+        index++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+
+    typeWriter();
+  </script></body>
 </html>
